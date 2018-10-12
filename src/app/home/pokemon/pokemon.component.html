@@ -1,0 +1,25 @@
+<div class="container ">
+    <div class="card" style="background-color:transparent;  left: 5%; top: 10%;">
+        <h3 style="color: white; text-align: center;"> LOS POKEMONES DISPONIBLES SON : </h3>
+    </div><br>
+   
+  
+      <div class="row">
+      
+        <div class="col-sm-4"*ngFor="let Pokedex of pokedex" style="left:5%;">
+           
+          <div class="card" style="max-width: auto; background-color:transparent; ">
+            <div class="card-body" >
+              <h5 class="card-title" style="color:white;"><strong>{{Pokedex.tipo}}</strong></h5>
+              <hr>
+              <img src="assets/{{Pokedex.imagen}}.png" style="width:50%; position: relative; left: 17%;" >
+              <hr>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+    
+   
+    
+    </div>
