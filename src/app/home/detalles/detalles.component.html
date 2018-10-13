@@ -25,15 +25,23 @@
                     <div *ngFor="let evo of pk.evolutions">
       
                       
-                      <h5 style="color:white;"> El nombre de la evolucion es: {{evo.to}}</h5><hr>
-                      <div *ngIf="evo.level!=null">
+                          <h5 style="color:white;"> El nombre de la evolucion es: {{evo.to}}</h5><hr>
+
+                          <a *ngFor =" let pk of poke">
+                            <div *ngIf= "evo.to == pk.name">
+                                <img src="{{pk.art_url}}" style="width: 30%; left: 15%">
+                              </div>
+                              
+                              </a>
+                          <div *ngIf="evo.level!=null">
                           <h5 style="color:white;"> El nivel de la evolucion es : {{evo.level}}</h5><hr>
                       </div>
                       
                       <h5 style="color:white;">El metodo en el cual evoluciona es: {{evo.method}}</h5>
                      
       
-                    </div>
+                    
+                  </div>
                           
       
                  
