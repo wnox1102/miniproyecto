@@ -1,24 +1,32 @@
 <div class="container ">
-    <div class="card" style="background-color:transparent;  left: 5%; top: 10%;">
-        <h3 style="color: white; text-align: center;"> LOS POKEMONES DISPONIBLES SON : </h3>
+    <div class="card" style="background-color:whitesmoke;  left: 5%; top: 10%;">
+        <h3 style="color: black; text-align: center;"> LOS POKEMONES DISPONIBLES SON : </h3>
     </div><br>
    
   
       <div class="row">
       
-        <div class="col-sm-4"*ngFor="let Pokedex of pokedex" style="left:5%;">
+        <div class="col-sm-4" *ngFor="let pk of poke"   style="left:5%;">
            
           <div class="card" style="max-width: auto; background-color:transparent; ">
             <div class="card-body" >
-              <h5 class="card-title" style="color:white;"><strong>{{Pokedex.tipo}}</strong></h5>
-              <hr>
-              <img src="assets/{{Pokedex.imagen}}.png" style="width:50%; position: relative; left: 17%;" >
-              <hr>
+              <h5 class="card-title" style="color:white;"><strong>{{pk.name}}</strong></h5>
+             
+
               
+              <hr>
+             <button (click)="pasarP(pk.pkdx_id)" routerLink="/home/detalles" routerLinkActive="active" style="background-color:transparent;"><img src="{{pk.art_url}}" style="width:55%; position: relative; left:15%;"></button> 
+              <hr>
+              <h5 style="color:white;">Pokedex id : {{pk.pkdx_id}}</h5>
+
+             
               </div>
             </div>
+            <br><br>
           </div>
+          
         </div>
+        
     
    
     

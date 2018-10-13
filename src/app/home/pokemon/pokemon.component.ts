@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-class Pokedex {
-  numero: number;
-  tipo: string;
-  imagen: string;
+import { DataService } from '../../servicios/data.service';
 
 
-}
 
 @Component({
   selector: 'app-pokemon',
@@ -13,13 +9,34 @@ class Pokedex {
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
+  
+  poke : Array<any>;
+  id: number;
+  service: DataService;
 
-  constructor() { }
+  pasarP(id:number){
+    this.service.cambiarID(id);
+  }
+  
+
+  constructor(public servicio:DataService) {
+
+
+    this.poke = servicio.getPokemones();
+    this.service=servicio;
+    
+    
+   }
+
+  
 
   ngOnInit() {
+    for(let i in this.poke){
+      console.log(this.poke);
+    }
   }
 
-  pokedex: Array<Pokedex> = 
+ /* pokedex: Array<Pokedex> = 
   [
     {
       "numero":1,
@@ -37,4 +54,5 @@ export class PokemonComponent implements OnInit {
     }
     
   ]
+  */
 }
