@@ -5,39 +5,44 @@
  
 
     <div class="row">
-    
-      <div class="col-sm-7" *ngFor="let pk of poke"   style="left:5%;">
+      <div *ngFor="let pk of poke">
+          <div class="col-sm-9"    style="left:5%;" *ngIf="pk.pkdx_id==id">
          
-        <div class="card" style="max-width: auto; background-color:transparent; " *ngIf="pk.pkdx_id==id">
-          <div class="card-body" >
-            <h5 class="card-title" ><strong>{{pk.name}}</strong></h5>
-    
-            <hr>
-            <img src="{{pk.art_url}}" style="width:40%; position: relative; left: 15%;">
-            <hr>
-            <p style="color:white;">La descripcion es:</p><hr>
-            <h5 style="color:white;">{{pk.description}}</h5><hr>
-            <h5 style="color:white;"> La generacion es: {{pk.__v}}</h5><hr>
-            <h5 style="color:white;"> Los tipos son: {{pk.types}}</h5><hr>
-
-            
-             
-              <div *ngFor="let evo of pk.evolutions">
-
-                
-                <h5 style="color:white;"> El nombre de la evolucion es: {{evo.to}}</h5><hr>
-                <h5 style="color:white;"> El nivel de la evolucion es : {{evo.level}}</h5><hr>
-                <h5 style="color:white;">El metodo en el cual evoluciona es: {{evo.method}}</h5>
-               
-
+              <div class="card" style="max-width: auto; background-color:transparent; " >
+                <div class="card-body" >
+                  <h5 class="card-title" style="color:white;" ><strong>{{pk.name}}</strong></h5>
+          
+                  <hr>
+                  <img src="{{pk.art_url}}" style="width:40%;  left: 15%;">
+                  <hr>
+                  <p style="color:white;">La descripcion es:</p><hr>
+                  <h5 style="color:white;">{{pk.description}}</h5><hr>
+                  <h5 style="color:white;"> La generacion es: {{pk.__v}}</h5><hr>
+                  <h5 style="color:white;"> Los tipos son: {{pk.types}}</h5><hr>
+      
+                  
+                   
+                    <div *ngFor="let evo of pk.evolutions">
+      
+                      
+                      <h5 style="color:white;"> El nombre de la evolucion es: {{evo.to}}</h5><hr>
+                      <div *ngIf="evo.level!=null">
+                          <h5 style="color:white;"> El nivel de la evolucion es : {{evo.level}}</h5><hr>
+                      </div>
+                      
+                      <h5 style="color:white;">El metodo en el cual evoluciona es: {{evo.method}}</h5>
+                     
+      
+                    </div>
+                          
+      
+                 
+                  </div>
+                </div>
+                <br><br>
               </div>
-                    
-
-           
-            </div>
-          </div>
-          <br><br>
-        </div>
-        
+              
+      </div>
+      
       </div>
       
