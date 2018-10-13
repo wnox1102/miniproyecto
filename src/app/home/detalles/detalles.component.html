@@ -8,27 +8,26 @@
     
       <div class="col-sm-7" *ngFor="let pk of poke"   style="left:5%;">
          
-        <div class="card" style="max-width: auto; background-color:white; " *ngIf="pk.pkdx_id==id">
+        <div class="card" style="max-width: auto; background-color:transparent; " *ngIf="pk.pkdx_id==id">
           <div class="card-body" >
             <h5 class="card-title" ><strong>{{pk.name}}</strong></h5>
     
             <hr>
             <img src="{{pk.art_url}}" style="width:40%; position: relative; left: 15%;">
             <hr>
-            <h5 style="color:white;">Pokedex id : {{pk.pkdx_id}}</h5>
-            <p>la descripcion es:</p>
-            <h5>{{pk.description}}</h5>
-            <h5> la generacion es: {{pk.__v}}</h5><br>
-            <h5> los tipos son: {{pk.types}}</h5>
+            <p style="color:white;">La descripcion es:</p><hr>
+            <h5 style="color:white;">{{pk.description}}</h5><hr>
+            <h5 style="color:white;"> La generacion es: {{pk.__v}}</h5><hr>
+            <h5 style="color:white;"> Los tipos son: {{pk.types}}</h5><hr>
 
             
              
               <div *ngFor="let evo of pk.evolutions">
 
                 
-                <h5> el nombre de la evolucion es: {{evo.to}}</h5><hr>
-                <h5> el nivel de la evolucion es : {{evo.level}}</h5><hr>
-                <h5>El metodo en el cual evoluciona es: {{evo.method}}</h5>
+                <h5 style="color:white;"> El nombre de la evolucion es: {{evo.to}}</h5><hr>
+                <h5 style="color:white;"> El nivel de la evolucion es : {{evo.level}}</h5><hr>
+                <h5 style="color:white;">El metodo en el cual evoluciona es: {{evo.method}}</h5>
                
 
               </div>
